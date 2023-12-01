@@ -21,11 +21,8 @@ fun star1(input: List<String>): Int{
 
 
 fun star2(input: List<String>): Int {
-    return input
-        .map {mapNumbers(it)}
-        .map{ it.filter { it.isDigit() }}
-        .map{ it.first().toString() + it.last()}
-        .fold(0) { acc, line -> acc + line.toInt() }
+    val mappedInput = input.map {mapNumbers(it)}
+    return star1(mappedInput)
 }
 
 fun mapNumbers(s: String): String {
