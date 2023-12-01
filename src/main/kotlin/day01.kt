@@ -13,12 +13,12 @@ fun main(){
 }
 
 fun star1(input: List<String>): Int{
-    return input
-        .map { it.filter { it.isDigit() } }
-        .map{ it.first().toString() + it.last()}
-        .fold(0) {acc, line -> acc + line.toInt()}
+    return input.fold(0) { acc: Int, s: String ->
+        val digits = s.filter {it.isDigit()}
+        val number = digits.first().toString() + digits.last()
+        acc + number.toInt()
+    }
 }
-
 
 fun star2(input: List<String>): Int {
     val mappedInput = input.map {mapNumbers(it)}
