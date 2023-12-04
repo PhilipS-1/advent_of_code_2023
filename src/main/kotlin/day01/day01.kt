@@ -9,7 +9,6 @@ fun main(){
 
     inputStream.bufferedReader().forEachLine { input.add(it) }
 //    input.forEach{println(it)}
-
     println(star1(input))
     println(star2(input))
 }
