@@ -1,3 +1,5 @@
+package day01
+
 import java.io.File
 import java.io.InputStream
 
@@ -21,7 +23,7 @@ fun star1(input: List<String>): Int{
 }
 
 fun star2(input: List<String>): Int {
-    val mappedInput = input.map {mapNumbers(it)}
+    val mappedInput = input.map { mapNumbers(it) }
     return star1(mappedInput)
 }
 
