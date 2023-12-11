@@ -15,14 +15,11 @@ for x, line in enumerate(input):
         if val != ".":
             coords.append((x,y))
 
-for tuple in coords:
-    x, y = tuple
-
 
 def calc_result(factor):
     sum = 0
     for i, ((x1, y1), (x2, y2)) in enumerate(combinations(coords, 2)):
-        lx,hx = sorted([x1, x2])
+        lx, hx = sorted([x1, x2])
         ly, hy = sorted([y1, y2])
         no_empty_rows = len([row for row in empty_row if row < hx and row > lx])
         no_empty_col = len([col for col in empty_col if col < hy and col > ly])
