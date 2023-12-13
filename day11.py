@@ -1,19 +1,11 @@
 from itertools import combinations
 
 with open('day11.txt', 'r') as f:
-    input = f.readlines()
-
-input = [x.strip() for x in input]
+    input = [line.strip() for line in f.readlines()]
 
 empty_row = [x for x, line in enumerate(input) if set(line) == {"."}]
 empty_col = [x for x, line in enumerate(zip(*input)) if set(line) == {"."}]
-
-
-coords = []
-for x, line in enumerate(input):
-    for y, val in enumerate(line):
-        if val != ".":
-            coords.append((x,y))
+coords = [(x, y) for x, line in enumerate(input) for y, val in enumerate(line) if val != "."]
 
 
 def calc_result(factor):
@@ -29,4 +21,3 @@ def calc_result(factor):
 
 print(calc_result(2))
 print(calc_result(1000000))
-
